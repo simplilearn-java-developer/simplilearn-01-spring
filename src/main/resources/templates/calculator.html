@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+<link rel="stylesheet" th:href="@{/styles/main.css}" />
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <h1>Calculator</h1>
+      <br>
+      <form th:action="@{/calculator/calculate}" method="post">
+        Number 1: <input type="text" name="num1" required>
+        <br><br>
+        Number 2: <input type="text" name="num2" required>
+        <br><br>
+        Operation: <select name="operation" required>
+                     <option value="" selected>Select an Operation</option>
+                     <option value="+">Addition</option>
+                     <option value="-">Subtraction</option>
+                     <option value="*">Multiply</option>
+                     <option value="/">Division</option>
+                     <option value="%">Modulus</option>
+                   </select>
+        <br><br>
+        <div th:if="${!#strings.isEmpty(result)}">
+          Result: <input type="text" th:value="${#numbers.formatDecimal(result,1,2)}" readonly>
+          <br><br>
+        </div>
+        <input type="submit" value="Calculate">
+      </form>
+    </div>
+  </div>
+</body>
+</html>

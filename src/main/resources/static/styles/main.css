@@ -1,0 +1,10 @@
+.box {
+  border: 0.05em solid black;
+  padding: 40px;
+}
+
+.container {
+  width:100%;
+  display: flex;
+  justify-content: center;
+}

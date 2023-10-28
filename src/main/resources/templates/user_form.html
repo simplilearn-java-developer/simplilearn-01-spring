@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Parameters Example</title>
+</head>
+<body>
+    <h1>HTML Form Thymeleaf Example</h1>
+    <br>
+    <form th:action="@{/user/table}" method='post'>
+      First Name: <input type='text' name='firstname' required>
+      <br><br>
+      Last Name: <input type='text' name='lastname' required>
+      <br><br>
+      Email: <input type='email' name='email' required>
+      <br><br>
+      Birth: <input type='date' name='birth' required>
+      <br><br>
+      <input type='submit' value='Submit'>
+    </form>
+</body>
+</html>
